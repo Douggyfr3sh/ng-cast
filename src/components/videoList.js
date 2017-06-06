@@ -15,6 +15,7 @@ angular.module('video-player')
   },
   controller: function  ($scope, $element, $attrs ) {
     console.log('$scope.onClick on initialization: ',this);
+    $scope.onClick = function () {};
     //return $scope;
   }
 });

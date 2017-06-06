@@ -1,6 +1,6 @@
 var expect = chai.expect;
 
-xdescribe('app', function() {
+describe('app', function() {
   var element, youTubeSpy;
 
   beforeEach(module('video-player'));
