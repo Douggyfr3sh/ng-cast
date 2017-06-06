@@ -1,7 +1,7 @@
 angular.module('video-player')
 .service('youTube', function($http){
-  this.searchYoutube = function(queryString, callback) {
-    console.log(window.YOUTUBE_API_KEY);
+  this.search = function(queryString, callback) {
+    //console.log(window.YOUTUBE_API_KEY);
     $http({
       method: 'GET',
       url: 'https://www.googleapis.com/youtube/v3/search',
@@ -14,11 +14,12 @@ angular.module('video-player')
         videoEmbeddable: 'true'
       }
     })
-      .then(function successfulCallback(response) {
-        console.log(response);
-        callback(response);
+      .then(function successfulCallback({data}) {
+        callback(data.items);
       }, function errorCallback(response) {
-        console.log('there was an error with the api request: ',response);
+        response.error.errors.forEach(function(err) {
+          console.error(err.message);
+        });
       });
   };
 });

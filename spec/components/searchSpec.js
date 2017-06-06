@@ -1,6 +1,6 @@
 var expect = chai.expect;
 
-xdescribe('search', function() {
+describe('search', function() {
   var element, scope, youTubeSearchMock, resultSpy;
 
   beforeEach(module('video-player'));
