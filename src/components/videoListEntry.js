@@ -5,6 +5,6 @@ angular.module('video-player')
     video: '<'
   },
   controller: function($scope, $element, $attrs) {
-    console.log($scope, this, $attrs);
+
   }
 });

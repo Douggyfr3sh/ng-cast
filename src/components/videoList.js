@@ -1,12 +1,20 @@
+// function VideoListController ($scope, $element, $attrs ) {
+//   console.log('$scope.onClick on initialization: ',this);
+
+//   return $scope;
+// }
+
+
+
 angular.module('video-player')
 .component('videoList', {
   templateUrl: "src/templates/videoList.html",
   bindings: {
-    videos: '<'
+    videos: '<',
+    clickerFxn: '<'
   },
-  controller: function($scope) {
-    //$scope.videos = window.exampleVideoData;
-    //console.log($scope);
-    return $scope;
+  controller: function  ($scope, $element, $attrs ) {
+    console.log('$scope.onClick on initialization: ',this);
+    //return $scope;
   }
 });
